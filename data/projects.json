@@ -1,0 +1,292 @@
+[
+  {
+    "id": 1,
+    "title": "مشروع ربط مجمع الكليات بالغرف عبر شبكة موحدة",
+    "description": "مشروع لربط مجمع الكليات عبر شبكة موحدة وبوابة أكاديمية ذكية.",
+    "hero_image": "./images/projects/network-main.jpg",
+    "meta": {
+      "domain": "شبكات",
+      "type": "بنية تحتية ونظام ويب",
+      "team_size": "4 أعضاء",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-network",
+        "label": "شبكة موحدة"
+      },
+      {
+        "icon": "ph-shield-check",
+        "label": "أمان وموثوقية"
+      },
+      {
+        "icon": "ph-rocket-launch",
+        "label": "أداء عالي"
+      }
+    ],
+    "about": "مشروع يطبق مفاهيم تقنية المعلومات لتطوير شبكة موحدة وبوابة أكاديمية ذكية، باستخدام Cisco Packet Tracer وNode.js وتقنيات VLAN وOSPF وSSO، لمعالجة تشتت الخدمات وتحسين الأداء.",
+    "features": [
+      {
+        "icon": "ph-plugs-connected",
+        "title": "شبكة موحدة",
+        "description": "ربط كافة الكليات بشبكة واحدة متكاملة"
+      },
+      {
+        "icon": "ph-browser",
+        "title": "بوابة أكاديمية",
+        "description": "بوابة ذكية لتسهيل الوصول للخدمات"
+      },
+      {
+        "icon": "ph-lock-key",
+        "title": "تسجيل دخول موحد (SSO)",
+        "description": "تسهيل الدخول عبر حساب واحد"
+      },
+      {
+        "icon": "ph-speedometer",
+        "title": "تحسين الأداء",
+        "description": "معالجة تشتت الخدمات ورفع كفاءة الشبكة"
+      }
+    ],
+    "interfaces": [
+      "./images/projects/network-1.jpg",
+      "./images/projects/network-2.jpg"
+    ],
+    "technologies": [
+      "Cisco Packet Tracer",
+      "Node.js",
+      "VLAN",
+      "OSPF",
+      "SSO"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-share-network"
+  },
+  {
+    "id": 2,
+    "title": "تطبيق الأمل",
+    "description": "نظام إلكتروني لإدارة الزواجات الجماعية وتسهيل الإجراءات بين اللجان.",
+    "hero_image": "",
+    "meta": {
+      "domain": "تطبيقات جوال",
+      "type": "تطبيق ذكي",
+      "team_size": "4 أعضاء",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-users-three",
+        "label": "إدارة لجان"
+      },
+      {
+        "icon": "ph-file-text",
+        "label": "رقمنة البيانات"
+      },
+      {
+        "icon": "ph-device-mobile",
+        "label": "سهولة الاستخدام"
+      }
+    ],
+    "about": "تطبيق الأمل هو نظام إلكتروني لإدارة الزواجات الجماعية، يسهّل تسجيل المستفيدين وإدارة اللجان والبيانات المالية في منصة واحدة. يعالج مشكلة الإجراءات الورقية وتشتت المعلومات وضعف التنسيق بين اللجان. تم تطويره باستخدام Flutter وDart وFirebase.",
+    "features": [
+      {
+        "icon": "ph-users",
+        "title": "تسجيل المستفيدين",
+        "description": "تسهيل تسجيل المشاركين في الزواج الجماعي"
+      },
+      {
+        "icon": "ph-users-three",
+        "title": "إدارة اللجان",
+        "description": "تنسيق العمل وتسهيل التواصل بين اللجان العاملة"
+      },
+      {
+        "icon": "ph-coin",
+        "title": "البيانات المالية",
+        "description": "إدارة الأمور المالية ومتابعتها بشكل دقيق"
+      },
+      {
+        "icon": "ph-files",
+        "title": "معالجة التشتت",
+        "description": "الاستغناء عن الإجراءات الورقية المتعبة"
+      }
+    ],
+    "interfaces": [],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-heart"
+  },
+  {
+    "id": 3,
+    "title": "تطبيق resQ",
+    "description": "تطبيق ذكي يساعد المواطنين على الإبلاغ عن الحوادث والكوارث بسرعة وتلقي تحذيرات الدفاع المدني.",
+    "hero_image": "",
+    "meta": {
+      "domain": "تطبيقات طوارئ",
+      "type": "تطبيق جوال",
+      "team_size": "4 أعضاء",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-lightning",
+        "label": "استجابة سريعة"
+      },
+      {
+        "icon": "ph-bell-ringing",
+        "label": "تنبيهات لحظية"
+      },
+      {
+        "icon": "ph-map-pin",
+        "label": "تحديد الموقع"
+      }
+    ],
+    "about": "تطبيق يساعد المواطنين على الإبلاغ عن الحوادث والكوارث بسرعة، ويستقبل تنبيهات وتحذيرات من الدفاع المدني عند وجود مخاطر قريبة. يقدم التطبيق إرشادات بسيطة للتصرف الصحيح أثناء الطوارئ، مع إمكانية الإبلاغ بالصور والموقع.",
+    "features": [
+      {
+        "icon": "ph-warning-circle",
+        "title": "الإبلاغ عن الحوادث",
+        "description": "إمكانية رفع البلاغات بسرعة مع إرفاق الصور والموقع الدقيق."
+      },
+      {
+        "icon": "ph-bell-ringing",
+        "title": "تنبيهات الدفاع المدني",
+        "description": "استقبال تحذيرات فورية عند وجود مخاطر أو كوارث قريبة."
+      },
+      {
+        "icon": "ph-book-open",
+        "title": "إرشادات الطوارئ",
+        "description": "توفير خطوات بسيطة وواضحة للتصرف الصحيح أثناء الأزمات."
+      },
+      {
+        "icon": "ph-lifebuoy",
+        "title": "أمان وموثوقية",
+        "description": "سرعة استجابة وربط مباشر مع الجهات المعنية لحماية الأرواح."
+      }
+    ],
+    "interfaces": [],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-lifebuoy"
+  },
+  {
+    "id": 4,
+    "title": "منصة ذكية لإدارة أفكار مشاريع التخرج",
+    "description": "منصة ذكية تعتمد على الذكاء الاصطناعي لاكتشاف تشابه الأفكار وتنظيم الاعتماد.",
+    "hero_image": "",
+    "meta": {
+      "domain": "ذكاء اصطناعي ونظم ويب",
+      "type": "منصة ذكية",
+      "team_size": "4 أعضاء",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-brain",
+        "label": "ذكاء اصطناعي"
+      },
+      {
+        "icon": "ph-archive",
+        "label": "أرشفة رقمية"
+      },
+      {
+        "icon": "ph-check-circle",
+        "label": "اعتماد سهل"
+      }
+    ],
+    "about": "منصة ذكية لإدارة أفكار مشاريع التخرج تعتمد على الذكاء الاصطناعي لاكتشاف تشابه الأفكار، وتنظيم عمليات المراجعة والاعتماد، وأرشفة المشاريع في بيئة رقمية متكاملة تدعم الابتكار وترفع جودة مشاريع التخرج.",
+    "features": [
+      {
+        "icon": "ph-magnifying-glass",
+        "title": "اكتشاف التشابه",
+        "description": "استخدام الذكاء الاصطناعي لاكتشاف الأفكار المكررة بدقة."
+      },
+      {
+        "icon": "ph-list-checks",
+        "title": "مراجعة واعتماد",
+        "description": "تنظيم وتبسيط عمليات مراجعة الأفكار واعتمادها من قبل اللجان."
+      },
+      {
+        "icon": "ph-archive-box",
+        "title": "أرشفة المشاريع",
+        "description": "بيئة رقمية متكاملة لأرشفة جميع مشاريع التخرج السابقة."
+      },
+      {
+        "icon": "ph-trend-up",
+        "title": "دعم الابتكار",
+        "description": "تحفيز الطلاب على تقديم أفكار جديدة ترفع من جودة المخرجات."
+      }
+    ],
+    "interfaces": [],
+    "technologies": [
+      "AI",
+      "Python",
+      "Web Technologies"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-brain"
+  },
+  {
+    "id": 5,
+    "title": "تطبيق خدماتي",
+    "description": "تطبيق ذكي يربط بين طالبي الخدمات ومقدميها والوسطاء في مكان واحد.",
+    "hero_image": "",
+    "meta": {
+      "domain": "تطبيقات خدمية",
+      "type": "تطبيق جوال",
+      "team_size": "4 أعضاء",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-users",
+        "label": "ربط المستفيدين"
+      },
+      {
+        "icon": "ph-clock",
+        "label": "توفير الوقت"
+      },
+      {
+        "icon": "ph-shield-check",
+        "label": "أمان وموثوقية"
+      }
+    ],
+    "about": "تطبيق ذكي يربط بين طالبي الخدمات ومقدميها والوسطاء في مكان واحد، ليسهل البحث والتواصل وطلب الخدمة ومتابعة تنفيذها حتى اكتمالها. طُوّر باستخدام Flutter وFirebase لتقديم تجربة سريعة وآمنة تسهم في توفير الوقت والجهد للجميع.",
+    "features": [
+      {
+        "icon": "ph-magnifying-glass",
+        "title": "سهولة البحث",
+        "description": "البحث عن الخدمات ومقدميها بسهولة وسرعة."
+      },
+      {
+        "icon": "ph-chat-circle",
+        "title": "تواصل فعّال",
+        "description": "توفير بيئة تواصل مباشرة بين طالب الخدمة ومقدمها."
+      },
+      {
+        "icon": "ph-list-checks",
+        "title": "متابعة الطلبات",
+        "description": "متابعة حالة الطلبات وتحديثاتها حتى اكتمالها."
+      },
+      {
+        "icon": "ph-shield-check",
+        "title": "تجربة آمنة",
+        "description": "توفير بيئة آمنة وموثوقة تضمن حقوق جميع الأطراف."
+      }
+    ],
+    "interfaces": [],
+    "technologies": [
+      "Flutter",
+      "Firebase",
+      "Dart"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-briefcase"
+  }
+]

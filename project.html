@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل المشروع</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Readex+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            readex: ['Readex Pro', 'sans-serif'],
+          },
+          colors: {
+            bgDark: '#0A191E',
+            cardDark: '#11232A',
+            cardLight: '#18313A',
+            primaryTeal: '#357F74',
+            primaryHover: '#2A6B61',
+            textLight: '#E2E8F0',
+            textMuted: '#94A3B8'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bgDark font-cairo text-textLight min-h-screen flex flex-col selection:bg-primaryTeal selection:text-white pb-10 relative page-enter">
+
+  <!-- Blurred Background Element -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <img id="pBgImage" src="" class="w-full h-full object-cover opacity-10 blur-[100px] scale-110">
+    <div class="absolute inset-0 bg-bgDark/80 mix-blend-overlay"></div>
+  </div>
+
+  <div class="relative z-10 flex-1 flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-bgDark border-b border-white/5 py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo" class="h-8 w-8 object-contain">
+        <span class="text-2xl font-readex font-bold tracking-wider text-white">
+          <span class="text-primaryTeal">T</span>echspire
+        </span>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="index.html" class="text-textMuted hover:text-white transition-colors">الرئيسية</a>
+        <a href="projects.html" class="text-primaryTeal transition-colors border-b-2 border-primaryTeal pb-1">المشاريع</a>
+        <a href="graduates.html" class="text-textMuted hover:text-white transition-colors">الخريجون</a>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <a href="projects.html" class="text-sm font-semibold text-textMuted hover:text-white transition-colors flex items-center gap-2 border border-white/10 px-5 py-2 rounded-full hover:border-white/30">
+          <span>رجوع</span>
+          <i class="ph ph-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 sm:px-6 py-8 flex-1 flex flex-col gap-6" id="projectContainer">
+    <!-- Project Details injected by JS -->
+    <div class="text-center py-20 text-white">جاري تحميل بيانات المشروع...</div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="py-24 bg-[#050B0E] border-t border-white/5 relative overflow-hidden text-center mt-12 w-full">
+    <!-- Glowing Orbs -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primaryTeal/20 rounded-[100%] blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-1/2 right-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Massive Watermark -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none font-readex whitespace-nowrap">
+      2026
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+      
+      <div class="mb-10 inline-flex flex-col items-center">
+        <!-- Logo -->
+        <img src="logo.png" alt="Techspire Logo" class="w-20 h-20 object-contain mb-4 drop-shadow-[0_0_15px_rgba(53,127,116,0.5)]">
+        <div class="text-3xl font-readex font-bold text-white tracking-widest">
+          <span class="text-primaryTeal">T</span>echspire
+        </div>
+      </div>
+
+      <h2 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">شكراً لكم</h2>
+      <p class="text-xl text-primaryTeal mb-10 max-w-lg mx-auto font-medium">شكراً لحضوركم ودعمكم لنا.. كنتم وما زلتم جزءاً أساسياً من قصة نجاحنا.</p>
+
+
+      
+      <!-- Copyright Line -->
+      <div class="w-full max-w-3xl border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-textMuted font-medium">
+          تم التصميم والتطوير بكل 🩵 بواسطة خريجي تقنية المعلومات
+        </p>
+        <p class="text-sm text-textMuted font-medium">
+          &copy; 2026 جميع الحقوق محفوظة لدفعة Techspire
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  </div>
+  <script src="app_v4.js"></script>
+</body>
+</html>

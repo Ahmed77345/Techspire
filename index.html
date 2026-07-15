@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دفعة Techspire 2026</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (Cairo & Readex Pro) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Readex+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Phosphor Icons for modern light icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            readex: ['Readex Pro', 'sans-serif'],
+          },
+          colors: {
+            bgDark: '#0A191E',
+            cardDark: '#11232A',
+            primaryTeal: '#357F74',
+            primaryHover: '#2A6B61',
+            textLight: '#E2E8F0',
+            textMuted: '#94A3B8'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bgDark font-cairo text-textLight overflow-x-hidden selection:bg-primaryTeal selection:text-white page-enter">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-bgDark/80 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo" class="h-8 w-8 object-contain">
+        <span class="text-2xl font-readex font-bold tracking-wider text-white">
+          <span class="text-primaryTeal">T</span>echspire
+        </span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="index.html" class="text-primaryTeal transition-colors border-b-2 border-primaryTeal pb-1">الرئيسية</a>
+        <a href="graduates.html" class="text-textMuted hover:text-white transition-colors">الخريجين</a>
+        <a href="projects.html" class="text-textMuted hover:text-white transition-colors">مشاريع التخرج</a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button id="mobileMenuBtn" class="md:hidden text-white text-2xl focus:outline-none">
+        <i id="mobileMenuIcon" class="ph ph-list"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="md:hidden hidden bg-bgDark border-t border-white/5 absolute top-full left-0 w-full shadow-2xl">
+      <div class="flex flex-col px-6 py-4 gap-4 text-center">
+        <a href="index.html" class="text-primaryTeal font-bold pb-2 border-b border-white/5">الرئيسية</a>
+        <a href="graduates.html" class="text-textMuted hover:text-white font-semibold pb-2 border-b border-white/5 transition-colors">الخريجين</a>
+        <a href="projects.html" class="text-textMuted hover:text-white font-semibold transition-colors">مشاريع التخرج</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fhero_bg.jpg?alt=media" class="w-full h-full object-cover opacity-60" alt="Graduation Background">
+      <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-bgDark/80 via-transparent to-transparent"></div>
+    </div>
+
+
+    <!-- Hero Content -->
+    <div class="container mx-auto px-6 relative z-10 flex items-center h-full pt-10">
+      
+      <!-- Right Side (Text) -->
+      <div class="w-full md:w-1/2 max-w-2xl text-center md:text-right">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 font-readex">
+          مرحباً بكم في <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-l from-primaryTeal to-white">دفعة تقنية المعلومات</span><br>
+          2026
+        </h1>
+        <p class="text-xl md:text-2xl text-primaryTeal font-bold mb-4">نحو مستقبل رقمي أفضل</p>
+        <p class="text-lg text-textMuted leading-relaxed mb-10 max-w-lg mx-auto md:mx-0">
+          نحن خريجو تقنية المعلومات، نصنع الحلول، نبتكر الأفكار، ونبني المستقبل بالتقنية.
+        </p>
+        <a href="graduates.html" class="inline-flex items-center justify-center gap-3 bg-primaryTeal hover:bg-primaryHover text-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(53,127,116,0.3)]">
+          <span>رؤية الخريجين</span>
+          <i class="ph ph-arrow-left"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-cardDark/50 border-t border-b border-white/5">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
+      
+      <!-- Content -->
+      <div class="w-full lg:w-1/3 text-center lg:text-right">
+        <h4 class="text-primaryTeal font-bold mb-2">عن التخصص</h4>
+        <h2 class="text-4xl font-extrabold text-white mb-6">تقنية المعلومات</h2>
+        <p class="text-textMuted leading-relaxed text-lg mb-8">
+          تقنية المعلومات هي القلب النابض لعصرنا الرقمي، تهتم بجمع وتحليل ومعالجة وحماية البيانات، وتطوير الأنظمة والحلول التقنية، ودعم المؤسسات للتحول نحو مستقبل ذكي وآمن.
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Feature 1 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-chart-bar text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">تحليل البيانات</h3>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-brain text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">الذكاء الاصطناعي</h3>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-shield-check text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">أمن المعلومات</h3>
+        </div>
+        <!-- Feature 4 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-plugs-connected text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">الشبكات</h3>
+        </div>
+        <!-- Feature 5 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-database text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">قواعد البيانات</h3>
+        </div>
+        <!-- Feature 6 -->
+        <div class="bg-bgDark border border-white/10 rounded-2xl p-6 text-center hover:border-primaryTeal/50 transition-colors group cursor-default">
+          <i class="ph ph-code text-4xl text-primaryTeal mb-4 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-white font-bold">تطوير البرمجيات</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Album Section -->
+  <section id="album" class="py-24">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-white mb-4">ألبوم الصور</h2>
+        <p class="text-primaryTeal font-bold">لحظات لا تُنسى من رحلتنا</p>
+      </div>
+
+
+      <!-- Swiper Carousel -->
+      <div class="swiper albumSwiper w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-white/5 relative group">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage.png?alt=media" alt="صورة جماعية 1" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy.png?alt=media" alt="صورة جماعية 2" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%202.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%202.png?alt=media" alt="صورة جماعية 3" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%203.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%203.png?alt=media" alt="صورة جماعية 4" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 5 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%204.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%204.png?alt=media" alt="صورة جماعية 5" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 6 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%205.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%205.png?alt=media" alt="صورة جماعية 6" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 7 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%206.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%206.png?alt=media" alt="صورة جماعية 7" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 8 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%207.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%207.png?alt=media" alt="صورة جماعية 8" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 9 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%208.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%208.png?alt=media" alt="صورة جماعية 9" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+          <!-- Slide 10 -->
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-bgDark">
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%209.png?alt=media" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark/95 via-bgDark/20 to-bgDark/40 z-10"></div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fimage%20copy%209.png?alt=media" alt="صورة جماعية 10" class="w-full h-full object-contain relative z-20 drop-shadow-2xl">
+          </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next !text-white opacity-0 group-hover:opacity-100 transition-opacity after:!text-3xl drop-shadow-lg pr-4"></div>
+        <div class="swiper-button-prev !text-white opacity-0 group-hover:opacity-100 transition-opacity after:!text-3xl drop-shadow-lg pl-4"></div>
+        
+        <!-- Pagination -->
+        <div class="swiper-pagination !bottom-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guestbook Section (Firebase) -->
+  <section id="guestbook" class="py-24 bg-cardDark border-t border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fhero_bg.jpg?alt=media')] opacity-5 mix-blend-overlay"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">سجل التهاني والآراء</h2>
+        <p class="text-textMuted max-w-2xl mx-auto text-lg">اترك بصمتك وشاركنا رأيك أو تهنئتك لخريجين الدفعة الخامسة IT 2026</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10">
+        
+        <!-- Form Container -->
+        <div class="w-full md:w-1/3 bg-bgDark p-8 rounded-3xl border border-white/5 shadow-2xl h-fit">
+          <h3 class="text-2xl font-bold text-white mb-6 text-center">اكتب رسالتك</h3>
+          <form id="guestbookForm" class="flex flex-col gap-5">
+            <div>
+              <label for="gbName" class="block text-sm font-semibold text-textMuted mb-2">اسمك الكريم</label>
+              <input type="text" id="gbName" required placeholder="محمد أحمد..." class="w-full bg-cardDark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primaryTeal focus:ring-1 focus:ring-primaryTeal transition-all">
+            </div>
+            <div>
+              <label for="gbMessage" class="block text-sm font-semibold text-textMuted mb-2">رسالتك أو ملاحظاتك</label>
+              <textarea id="gbMessage" required rows="4" placeholder="اكتب ما تود قوله لنا..." class="w-full bg-cardDark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primaryTeal focus:ring-1 focus:ring-primaryTeal transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" id="gbSubmitBtn" class="w-full bg-primaryTeal hover:bg-primaryHover text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(53,127,116,0.3)] flex items-center justify-center gap-2 mt-2">
+              <span>إرسال الرسالة</span>
+              <i class="ph ph-paper-plane-right"></i>
+            </button>
+            <p id="gbStatus" class="text-sm text-center hidden mt-2"></p>
+          </form>
+        </div>
+
+        <!-- Comments List -->
+        <div class="w-full md:w-2/3 flex flex-col gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar" id="guestbookList">
+          <!-- Loading placeholder -->
+          <div class="text-center text-textMuted py-10 flex flex-col items-center gap-3">
+            <i class="ph ph-spinner animate-spin text-3xl text-primaryTeal"></i>
+            <span>جاري تحميل الآراء...</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer id="footer" class="py-24 bg-[#050B0E] border-t border-white/5 relative overflow-hidden text-center">
+    <!-- Glowing Orbs -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primaryTeal/20 rounded-[100%] blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-1/2 right-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Massive Watermark -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none font-readex whitespace-nowrap">
+      2026
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+      
+      <div class="mb-10 inline-flex flex-col items-center">
+        <!-- Logo -->
+        <img src="logo.png" alt="Techspire Logo" class="w-20 h-20 object-contain mb-4 drop-shadow-[0_0_15px_rgba(53,127,116,0.5)]">
+        <div class="text-3xl font-readex font-bold text-white tracking-widest">
+          <span class="text-primaryTeal">T</span>echspire
+        </div>
+      </div>
+
+      <h2 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">شكراً لكم</h2>
+      <p class="text-xl text-primaryTeal mb-10 max-w-lg mx-auto font-medium">شكراً لحضوركم ودعمكم لنا.. كنتم وما زلتم جزءاً أساسياً من قصة نجاحنا.</p>
+
+
+      
+      <!-- Copyright Line -->
+      <div class="w-full max-w-3xl border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-textMuted font-medium">
+          تم التصميم والتطوير بكل 🩵 بواسطة خريجي تقنية المعلومات
+        </p>
+        <p class="text-sm text-textMuted font-medium">
+          &copy; 2026 جميع الحقوق محفوظة لدفعة Techspire
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <button id="closeLightbox" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[110]">
+      <i class="ph ph-x text-4xl"></i>
+    </button>
+    <img id="lightboxImage" src="" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl object-contain scale-95 transition-transform duration-300">
+  </div>
+
+  <script src="app_v4.js"></script>
+  <script type="module" src="guestbook.js"></script>
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.albumSwiper', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      // Lightbox Logic
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const closeBtn = document.getElementById('closeLightbox');
+
+      // Make slides clickable
+      document.querySelectorAll('.swiper-slide img.z-20').forEach(img => {
+        img.classList.add('cursor-pointer', 'hover:scale-105', 'transition-transform', 'duration-500');
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.remove('hidden');
+          // Trigger reflow for transition
+          void lightbox.offsetWidth;
+          lightbox.classList.remove('opacity-0');
+          lightboxImg.classList.remove('scale-95');
+          lightboxImg.classList.add('scale-100');
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.add('opacity-0');
+        lightboxImg.classList.remove('scale-100');
+        lightboxImg.classList.add('scale-95');
+        setTimeout(() => {
+          lightbox.classList.add('hidden');
+        }, 300);
+      };
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      
+      // Close with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

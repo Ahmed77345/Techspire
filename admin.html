@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم سجل الآراء</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Readex+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            readex: ['Readex Pro', 'sans-serif'],
+          },
+          colors: {
+            bgDark: '#0A191E',
+            cardDark: '#0D2127',
+            primaryTeal: '#357F74',
+            primaryHover: '#2A665D',
+            textLight: '#E2E8F0',
+            textMuted: '#94A3B8',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bgDark text-textLight min-h-screen flex flex-col items-center">
+
+  <div class="container mx-auto px-6 py-12 max-w-4xl w-full">
+    
+    <div class="flex justify-between items-center mb-10 border-b border-white/10 pb-6">
+      <h1 class="text-3xl font-readex font-bold text-white">لوحة تحكم سجل الآراء 🛡️</h1>
+      <button id="logoutBtn" class="hidden px-4 py-2 bg-red-500/10 text-red-400 hover:bg-red-500/20 rounded-lg transition border border-red-500/20 flex items-center gap-2">
+        <span>تسجيل خروج</span>
+        <i class="ph ph-sign-out"></i>
+      </button>
+    </div>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="bg-cardDark p-8 rounded-2xl border border-white/10 max-w-md mx-auto shadow-2xl animate-fade-in">
+      <h2 class="text-2xl font-bold mb-6 text-center">تسجيل الدخول للمدير</h2>
+      <form id="loginForm" class="flex flex-col gap-4">
+        <div>
+          <label class="block text-sm text-textMuted mb-2">البريد الإلكتروني</label>
+          <input type="email" id="email" required class="w-full bg-bgDark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primaryTeal transition" dir="ltr">
+        </div>
+        <div>
+          <label class="block text-sm text-textMuted mb-2">كلمة المرور</label>
+          <input type="password" id="password" required class="w-full bg-bgDark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primaryTeal transition" dir="ltr">
+        </div>
+        <button type="submit" id="loginBtn" class="w-full bg-primaryTeal hover:bg-primaryHover text-white font-bold py-3 rounded-lg mt-2 transition flex justify-center items-center gap-2">
+          <span>دخول</span>
+          <i class="ph ph-sign-in"></i>
+        </button>
+        <p id="loginError" class="text-red-400 text-sm text-center hidden mt-2"></p>
+      </form>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="hidden flex-col gap-6 animate-fade-in">
+      <div class="bg-cardDark p-6 rounded-2xl border border-white/10 flex justify-between items-center">
+        <div>
+          <h2 class="text-xl font-bold text-white mb-1">الرسائل الواردة</h2>
+          <p class="text-sm text-textMuted">قم بتفعيل التعليقات التي ترغب بعرضها للجمهور.</p>
+        </div>
+        <div class="text-sm px-3 py-1 rounded-full bg-primaryTeal/20 text-primaryTeal font-bold border border-primaryTeal/30">
+          <span id="totalCount">0</span> رسالة
+        </div>
+      </div>
+
+      <div id="adminCommentsList" class="flex flex-col gap-4">
+        <!-- Loading -->
+        <div class="text-center py-10">
+          <i class="ph ph-spinner animate-spin text-4xl text-primaryTeal"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مشاريع التخرج</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Readex+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            readex: ['Readex Pro', 'sans-serif'],
+          },
+          colors: {
+            bgDark: '#0A191E',
+            cardDark: '#11232A',
+            primaryTeal: '#357F74',
+            primaryHover: '#2A6B61',
+            textLight: '#E2E8F0',
+            textMuted: '#94A3B8'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bgDark font-cairo text-textLight overflow-x-hidden selection:bg-primaryTeal selection:text-white page-enter">
+
+  <!-- Navbar -->
+  <nav class="w-full z-50 bg-bgDark border-b border-white/5 py-4 relative" id="navbar">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo" class="h-8 w-8 object-contain">
+        <span class="text-2xl font-readex font-bold tracking-wider text-white">
+          <span class="text-primaryTeal">T</span>echspire
+        </span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="index.html" class="text-textMuted hover:text-white transition-colors">الرئيسية</a>
+        <a href="graduates.html" class="text-textMuted hover:text-white transition-colors">الخريجين</a>
+        <a href="projects.html" class="text-primaryTeal transition-colors border-b-2 border-primaryTeal pb-1">مشاريع التخرج</a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button id="mobileMenuBtn" class="md:hidden text-white text-2xl focus:outline-none">
+        <i id="mobileMenuIcon" class="ph ph-list"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="md:hidden hidden bg-bgDark border-t border-white/5 absolute top-full left-0 w-full shadow-2xl z-50">
+      <div class="flex flex-col px-6 py-4 gap-4 text-center">
+        <a href="index.html" class="text-textMuted hover:text-white font-semibold pb-2 border-b border-white/5 transition-colors">الرئيسية</a>
+        <a href="graduates.html" class="text-textMuted hover:text-white font-semibold pb-2 border-b border-white/5 transition-colors">الخريجين</a>
+        <a href="projects.html" class="text-primaryTeal font-bold transition-colors">مشاريع التخرج</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Hero Section -->
+  <section class="relative pt-32 pb-16 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-bgDark/90 z-10"></div>
+      <img src="https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Fhero_bg.jpg?alt=media" class="w-full h-full object-cover opacity-20" alt="Background">
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <div class="w-8 h-1 bg-primaryTeal/50 rounded-full"></div>
+        <h1 class="text-5xl font-extrabold text-white font-readex">مشاريع التخرج</h1>
+        <div class="w-8 h-1 bg-primaryTeal/50 rounded-full"></div>
+      </div>
+      <h2 class="text-xl text-primaryTeal font-bold mb-6">مشاريع متميزة لحلول واقعية</h2>
+      <p class="text-textMuted max-w-2xl mx-auto text-lg">نفتخر بتقديم مشاريع تخدم المجتمع وتواكب أحدث التقنيات</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 min-h-[50vh]">
+    <div class="container mx-auto px-4 sm:px-6">
+      
+      <!-- Search -->
+      <div class="flex justify-between items-center mb-10 bg-cardDark p-4 rounded-2xl border border-white/5">
+        <div class="w-full md:w-96 relative">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="ابحث عن مشروع..." 
+            class="w-full bg-bgDark border border-white/10 text-white px-6 py-3 rounded-xl focus:outline-none focus:border-primaryTeal transition-colors pr-12 text-sm"
+          >
+          <i class="ph ph-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-textMuted text-lg"></i>
+        </div>
+      </div>
+
+      <!-- Projects Container -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered by JS -->
+        <div class="col-span-full text-center py-10 text-textMuted">يتم تحميل المشاريع...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="py-24 bg-[#050B0E] border-t border-white/5 relative overflow-hidden text-center mt-12">
+    <!-- Glowing Orbs -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primaryTeal/20 rounded-[100%] blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-1/2 right-0 w-64 h-64 bg-primaryTeal/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Massive Watermark -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none font-readex whitespace-nowrap">
+      2026
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+      
+      <div class="mb-10 inline-flex flex-col items-center">
+        <!-- Logo -->
+        <img src="logo.png" alt="Techspire Logo" class="w-20 h-20 object-contain mb-4 drop-shadow-[0_0_15px_rgba(53,127,116,0.5)]">
+        <div class="text-3xl font-readex font-bold text-white tracking-widest">
+          <span class="text-primaryTeal">T</span>echspire
+        </div>
+      </div>
+
+      <h2 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">شكراً لكم</h2>
+      <p class="text-xl text-primaryTeal mb-10 max-w-lg mx-auto font-medium">شكراً لحضوركم ودعمكم لنا.. كنتم وما زلتم جزءاً أساسياً من قصة نجاحنا.</p>
+
+
+      
+      <!-- Copyright Line -->
+      <div class="w-full max-w-3xl border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-textMuted font-medium">
+          تم التصميم والتطوير بكل 🩵 بواسطة خريجي تقنية المعلومات
+        </p>
+        <p class="text-sm text-textMuted font-medium">
+          &copy; 2026 جميع الحقوق محفوظة لدفعة Techspire
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="app_v4.js"></script>
+</body>
+</html>
