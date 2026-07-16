@@ -171,7 +171,7 @@
     "id": 30,
     "name": "م/ محمد انيس بافضل",
     "image": "./images/students/bafadhl.jpg",
-    "project_id": 0,
+    "project_id": 6,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -192,7 +192,7 @@
     "id": 33,
     "name": "م/ حسن سالم ربيحان",
     "image": "./images/students/hassan.jpg",
-    "project_id": 0,
+    "project_id": 6,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -255,7 +255,7 @@
     "id": 42,
     "name": "م/ طالب حامد محيفوظ",
     "image": "./images/students/taleb.jpg",
-    "project_id": 0,
+    "project_id": 6,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {

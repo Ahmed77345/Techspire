@@ -288,5 +288,64 @@
     ],
     "demo_link": "#",
     "card_icon": "ph-briefcase"
+  },
+  {
+    "id": 6,
+    "title": "شبكة شركات آمنة (VPN)",
+    "description": "مشروع هندسي تطبيقي لبناء شبكة شركات موحدة وآمنة ومنخفضة التكلفة عبر محاكاة Cisco Packet Tracer.",
+    "hero_image": "",
+    "meta": {
+      "domain": "شبكات وأمن معلومات",
+      "type": "محاكاة شبكات",
+      "team_size": "3 طلاب",
+      "year": "2026"
+    },
+    "stats": [
+      {
+        "icon": "ph-shield-check",
+        "label": "تشفير AES-256"
+      },
+      {
+        "icon": "ph-hard-drives",
+        "label": "ربط Site-to-Site"
+      },
+      {
+        "icon": "ph-lock-key",
+        "label": "تأمين عالي"
+      }
+    ],
+    "about": "يستبدل المشروع خطوط MPLS المكلفة بنظام ربط مشفر (Site-to-Site VPN) بتشفير عسكري (AES-256)، مع تأمين وحماية الشبكة الداخلية وتوجيهها ذكيًا باستخدام تقنيات VLANs وPort Security وACLs.",
+    "features": [
+      {
+        "icon": "ph-shield-check",
+        "title": "تشفير عسكري",
+        "description": "استخدام خوارزميات AES-256 لضمان سرية وأمان البيانات المنقولة عبر الفروع."
+      },
+      {
+        "icon": "ph-network",
+        "title": "VLANs & Routing",
+        "description": "توجيه ذكي وتقسيم للشبكة باستخدام شبكات محلية وهمية (VLANs) لرفع كفاءة الأداء."
+      },
+      {
+        "icon": "ph-lock-key",
+        "title": "Port Security & ACLs",
+        "description": "تأمين منافذ الشبكة والتحكم الدقيق في الوصول لمنع أي هجمات داخلية أو خارجية."
+      },
+      {
+        "icon": "ph-money",
+        "title": "تكلفة منخفضة",
+        "description": "بديل اقتصادي فعال لخطوط MPLS المكلفة دون المساومة على جودة وأمان الاتصال."
+      }
+    ],
+    "interfaces": [],
+    "technologies": [
+      "Cisco Packet Tracer",
+      "VPN (Site-to-Site)",
+      "AES-256",
+      "VLANs",
+      "ACLs"
+    ],
+    "demo_link": "#",
+    "card_icon": "ph-hard-drives"
   }
 ]
