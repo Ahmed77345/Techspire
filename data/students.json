@@ -17,7 +17,7 @@
     "id": 8,
     "name": "م/ عبدالمجيد عبدالله باصلعه",
     "image": "./images/students/abdulmajeed.jpg",
-    "project_id": 2,
+    "project_id": 9,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -80,7 +80,7 @@
     "id": 17,
     "name": "م/ طه محمد شامي",
     "image": "./images/students/taha.jpg",
-    "project_id": 0,
+    "project_id": 9,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -241,14 +241,14 @@
     "id": 40,
     "name": "م/ علي عبدالله الاحمر",
     "image": "./images/students/alahmar.jpg",
-    "project_id": 0,
+    "project_id": 9,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
     "id": 41,
     "name": "م/ عبدالعزيز عبدالله الانسي",
     "image": "./images/students/alansi.jpg",
-    "project_id": 0,
+    "project_id": 9,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -262,7 +262,7 @@
     "id": 43,
     "name": "م/ عبدالمجيد عبدالله الانسي",
     "image": "./images/students/abdulmajeed_alansi.jpg",
-    "project_id": 0,
+    "project_id": 9,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
