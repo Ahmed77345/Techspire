@@ -30,7 +30,7 @@
   {
     "id": 11,
     "name": "م/ محمد ابوبكر الشاطري",
-    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/students%2Faidid.jpg?alt=media",
+    "image": "./images/students/alshatri.jpg",
     "project_id": 0,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
@@ -306,5 +306,12 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
     "project_id": 8,
     "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 51,
+    "name": "م/ أبوبكر مشهور عيديد",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/students%2Faidid.jpg?alt=media",
+    "project_id": 0,
+    "bio": "مهندس تقنية معلومات طموح يسعى لتقديم حلول تقنية مبتكرة."
   }
 ]
