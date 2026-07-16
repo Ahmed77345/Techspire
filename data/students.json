@@ -14,13 +14,6 @@
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
-    "id": 8,
-    "name": "م/ عبدالمجيد عبدالله باصلعه",
-    "image": "./images/students/abdulmajeed.jpg",
-    "project_id": 9,
-    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
-  },
-  {
     "id": 9,
     "name": "م/ أحمد صالح الجوهي",
     "image": "./images/students/ahmed.jpg",
