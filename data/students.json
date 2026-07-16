@@ -264,5 +264,26 @@
     "image": "./images/students/abdulmajeed_alansi.jpg",
     "project_id": 0,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 44,
+    "name": "م/ مارية عبدالله بازمول",
+    "image": "./images/students/default_avatar.jpg",
+    "project_id": 7,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 45,
+    "name": "م/ فاطمة هادي باجبير",
+    "image": "./images/students/default_avatar.jpg",
+    "project_id": 7,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 46,
+    "name": "م/ شهد عادل باموسى",
+    "image": "./images/students/default_avatar.jpg",
+    "project_id": 7,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
   }
 ]
