@@ -31,7 +31,7 @@
     "id": 11,
     "name": "م/ محمد ابوبكر الشاطري",
     "image": "./images/students/alshatri.jpg",
-    "project_id": 0,
+    "project_id": 13,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -129,7 +129,7 @@
     "id": 25,
     "name": "م/ أحمد عمر بن سميط",
     "image": "./images/students/binsmait.jpg",
-    "project_id": 0,
+    "project_id": 13,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -192,7 +192,7 @@
     "id": 34,
     "name": "م/ صهيب محمد صبيح",
     "image": "./images/students/suhaib.jpg",
-    "project_id": 0,
+    "project_id": 16,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -313,5 +313,138 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/students%2Faidid.jpg?alt=media",
     "project_id": 0,
     "bio": "مهندس تقنية معلومات طموح يسعى لتقديم حلول تقنية مبتكرة."
+  },
+  {
+    "id": 52,
+    "name": "م/ أسماء محمد جبران",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 10,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 53,
+    "name": "م/ اية ناصر التميمي",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 10,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 54,
+    "name": "م/ خُلود عصام بن مدشل",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 10,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 55,
+    "name": "م/ هدى سالم باعباد",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 10,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 56,
+    "name": "م/ فاتن فائز الجابري",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 11,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 57,
+    "name": "م/ فاطمة عبدالباري الحبشي",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 11,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 58,
+    "name": "م/ امة الرحمن مراد باجبير",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 11,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 59,
+    "name": "م/ عائشة هود شنيمان",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 11,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 60,
+    "name": "م/ تغريد صلاح القرموشي",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 12,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 61,
+    "name": "م/ روان نبيل الصلوي",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 12,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 62,
+    "name": "م/ سالي خالد شرف الدين",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 12,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 63,
+    "name": "م/ فاطمة عبدالقادر الصديق",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 12,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 64,
+    "name": "م/ اسماء ابوبكر السري",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 14,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 65,
+    "name": "م/ رقية محمد العيدروس",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 14,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 66,
+    "name": "م/ امل ردمان عبده",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 15,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 67,
+    "name": "م/ رغد سالم بلحول",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 15,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 68,
+    "name": "م/ فاطمة عمر بازغيفان",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 15,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 69,
+    "name": "م/ هبة الرحمن أنور باجمعان",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 15,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 70,
+    "name": "م/ عبدالله عمر مهدمي",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/students%2Fmahdami.jpg?alt=media",
+    "project_id": 16,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   }
 ]
