@@ -106,8 +106,8 @@ function renderStudents(students) {
         </div>
         
         <div class="p-5 flex flex-col items-center text-center -mt-6 relative z-10 flex-1">
-          <h3 class="text-lg font-bold text-white mb-1 drop-shadow-md">${student.name}</h3>
-          <span class="text-xs text-primaryTeal mb-5 font-semibold">خريج تقنية المعلومات</span>
+          <h3 class="text-[15px] sm:text-base font-bold text-white mb-1 drop-shadow-md px-4 w-full break-words leading-normal">${student.name}</h3>
+          <span class="text-[11px] sm:text-xs text-primaryTeal mb-5 font-semibold px-4 break-words text-center">خريج تقنية المعلومات</span>
           
           <a href="student.html?id=${student.id}" class="mt-auto w-full border border-white/10 rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm text-textMuted group-hover:bg-primaryTeal group-hover:text-white group-hover:border-primaryTeal transition-all shadow-sm">
             <span>عرض الملف الشخصي</span>
