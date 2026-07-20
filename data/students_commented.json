@@ -47,5 +47,19 @@
     "image": "./images/students/farah.jpg",
     "project_id": 0,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 37,
+    "name": "م/ محمد عبدالناصر الحريري",
+    "image": "./images/students/default_avatar.jpg",
+    "project_id": 4,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 39,
+    "name": "م/ محمد احمد بن حيدرة",
+    "image": "./images/students/default_avatar.jpg",
+    "project_id": 4,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   }
 ]
