@@ -404,5 +404,26 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
     "project_id": 17,
     "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 14,
+    "name": "م/ عبدالله عبدالحكيم التميمي",
+    "image": "./images/students/altamimi.jpg",
+    "project_id": 15,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 18,
+    "name": "م/ معاذ سعيد بارفيد",
+    "image": "./images/students/moath.jpg",
+    "project_id": 15,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 31,
+    "name": "م/ فرج احمد عباس",
+    "image": "./images/students/farah.jpg",
+    "project_id": 15,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   }
 ]
