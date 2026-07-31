@@ -425,5 +425,33 @@
     "image": "./images/students/farah.jpg",
     "project_id": 19,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 74,
+    "name": "م/ رجاء صالح بالطيف",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 20,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 75,
+    "name": "م/ نفيسة ربيع بيزار",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 20,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 76,
+    "name": "م/ نسيبة أحمد صرهيد",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 20,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 77,
+    "name": "م/ اريام عادل العامري",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
+    "project_id": 20,
+    "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
   }
 ]
