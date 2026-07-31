@@ -142,5 +142,19 @@
 
   </div>
   <script src="app_v4.js"></script>
+
+  <!-- Analytics -->
+  <script type="module" src="analytics.js"></script>
+  <script type="module">
+    import { trackView } from './analytics.js';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (id) {
+        trackView('students_analytics', id);
+      }
+    });
+  </script>
 </body>
 </html>

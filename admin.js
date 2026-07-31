@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-import { getFirestore, collection, onSnapshot, query, orderBy, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getFirestore, collection, onSnapshot, query, orderBy, doc, updateDoc, deleteDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDuPkuqMA9mcQoYhHTBttz71X8HwjKTQQ0",
@@ -176,4 +176,125 @@ function loadComments() {
       </div>
     `;
   });
+}
+
+
+// Tabs Logic
+const tabMessages = document.getElementById('tabMessages');
+const tabStats = document.getElementById('tabStats');
+const messagesContent = document.getElementById('messagesContent');
+const statsContent = document.getElementById('statsContent');
+
+if(tabMessages && tabStats) {
+  tabMessages.addEventListener('click', () => {
+    tabMessages.classList.add('active-tab', 'text-primaryTeal', 'border-primaryTeal');
+    tabMessages.classList.remove('text-textMuted', 'border-transparent');
+    tabStats.classList.remove('active-tab', 'text-primaryTeal', 'border-primaryTeal');
+    tabStats.classList.add('text-textMuted', 'border-transparent');
+    
+    messagesContent.classList.remove('hidden');
+    messagesContent.classList.add('flex');
+    statsContent.classList.add('hidden');
+    statsContent.classList.remove('flex');
+  });
+
+  tabStats.addEventListener('click', () => {
+    tabStats.classList.add('active-tab', 'text-primaryTeal', 'border-primaryTeal');
+    tabStats.classList.remove('text-textMuted', 'border-transparent');
+    tabMessages.classList.remove('active-tab', 'text-primaryTeal', 'border-primaryTeal');
+    tabMessages.classList.add('text-textMuted', 'border-transparent');
+    
+    statsContent.classList.remove('hidden');
+    statsContent.classList.add('flex');
+    messagesContent.classList.add('hidden');
+    messagesContent.classList.remove('flex');
+    
+    loadStats();
+  });
+}
+
+// Stats Logic
+let statsLoaded = false;
+async function loadStats() {
+  if (statsLoaded) return;
+  
+  try {
+    // 1. Fetch metadata (Students & Projects) to map IDs to Names
+    const [studentsRes, projectsRes] = await Promise.all([
+      fetch('/data/students.json'),
+      fetch('/data/projects.json')
+    ]);
+    const students = await studentsRes.json();
+    const projects = await projectsRes.json();
+    
+    const studentsMap = {};
+    students.forEach(s => studentsMap[s.id] = s.name);
+    
+    const projectsMap = {};
+    projects.forEach(p => projectsMap[p.id] = p.title);
+    
+    // 2. Fetch General Stats
+    const generalSnap = await getDocs(collection(db, 'general_analytics'));
+    let totalBtnClicks = 0;
+    generalSnap.forEach(doc => {
+      if(doc.id === 'view_graduates_btn') {
+        totalBtnClicks = doc.data().views || 0;
+      }
+    });
+    document.getElementById('generalViewsCount').innerText = totalBtnClicks;
+    
+    // 3. Fetch Students Stats
+    const studentsSnap = await getDocs(collection(db, 'students_analytics'));
+    let studentsStats = [];
+    studentsSnap.forEach(doc => {
+      studentsStats.push({ id: doc.id, views: doc.data().views || 0 });
+    });
+    studentsStats.sort((a, b) => b.views - a.views);
+    
+    const studentsListEl = document.getElementById('studentsStatsList');
+    studentsListEl.innerHTML = '';
+    if(studentsStats.length === 0) {
+      studentsListEl.innerHTML = '<p class="text-textMuted text-center text-sm">لا توجد بيانات بعد.</p>';
+    } else {
+      studentsStats.forEach(stat => {
+        const name = studentsMap[stat.id] || `خريج #${stat.id}`;
+        studentsListEl.innerHTML += `
+          <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5">
+            <span class="text-sm font-semibold">${name}</span>
+            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold">${stat.views} زيارة</span>
+          </div>
+        `;
+      });
+    }
+    
+    // 4. Fetch Projects Stats
+    const projectsSnap = await getDocs(collection(db, 'projects_analytics'));
+    let projectsStats = [];
+    projectsSnap.forEach(doc => {
+      projectsStats.push({ id: doc.id, views: doc.data().views || 0 });
+    });
+    projectsStats.sort((a, b) => b.views - a.views);
+    
+    const projectsListEl = document.getElementById('projectsStatsList');
+    projectsListEl.innerHTML = '';
+    if(projectsStats.length === 0) {
+      projectsListEl.innerHTML = '<p class="text-textMuted text-center text-sm">لا توجد بيانات بعد.</p>';
+    } else {
+      projectsStats.forEach(stat => {
+        const name = projectsMap[stat.id] || `مشروع #${stat.id}`;
+        projectsListEl.innerHTML += `
+          <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5">
+            <span class="text-sm font-semibold truncate max-w-[70%]">${name}</span>
+            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold whitespace-nowrap">${stat.views} زيارة</span>
+          </div>
+        `;
+      });
+    }
+    
+    statsLoaded = true;
+  } catch (error) {
+    console.error("Error loading stats:", error);
+    document.getElementById('studentsStatsList').innerHTML = `<p class="text-red-400 text-center text-sm p-4 bg-red-900/20 rounded">خطأ: ${error.message}</p>`;
+    document.getElementById('projectsStatsList').innerHTML = `<p class="text-red-400 text-center text-sm p-4 bg-red-900/20 rounded">خطأ: ${error.message}</p>`;
+  }
 }
