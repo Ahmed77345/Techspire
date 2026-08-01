@@ -93,21 +93,47 @@
       <!-- Stats Tab -->
       <div id="statsContent" class="tab-content hidden flex-col gap-8">
         
+        
+        
+        
+        <div class="flex justify-end mb-6 gap-3">
+          <button id="openClearStatsModalBtn" class="inline-flex items-center gap-2 bg-red-600/20 hover:bg-red-600/40 text-red-400 border border-red-500/30 px-4 py-2 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(220,38,38,0.2)]">
+            <i class="ph ph-trash"></i>
+            مسح البيانات
+          </button>
+
+          <button id="refreshStatsBtn" class="inline-flex items-center gap-2 bg-primaryTeal hover:bg-primaryHover text-white px-4 py-2 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(53,127,116,0.3)]">
+            <i class="ph ph-arrows-clockwise"></i>
+            تحديث الإحصائيات
+          </button>
+        </div>
         <!-- General Stats -->
-        <div class="bg-cardDark p-6 rounded-2xl border border-white/10 flex justify-between items-center shadow-lg">
-          <div>
-            <h2 class="text-xl font-bold text-white mb-1">النقرات على زر "رؤية الخريجين"</h2>
-            <p class="text-sm text-textMuted">كم مرة تم الضغط على الزر في الصفحة الرئيسية</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-cardDark p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center shadow-lg gap-4 text-center">
+            <h2 class="text-lg font-bold text-white">زر "رؤية الخريجين"</h2>
+            <div class="text-2xl px-6 py-2 rounded-xl bg-primaryTeal/20 text-primaryTeal font-extrabold border border-primaryTeal/30">
+              <span id="generalViewsCount">0</span>
+            </div>
           </div>
-          <div class="text-2xl px-6 py-3 rounded-xl bg-primaryTeal/20 text-primaryTeal font-extrabold border border-primaryTeal/30">
-            <span id="generalViewsCount">0</span>
+          <div class="bg-cardDark p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center shadow-lg gap-4 text-center">
+            <h2 class="text-lg font-bold text-white">زر القائمة: "الخريجون"</h2>
+            <div class="text-2xl px-6 py-2 rounded-xl bg-primaryTeal/20 text-primaryTeal font-extrabold border border-primaryTeal/30">
+              <span id="navGraduatesViewsCount">0</span>
+            </div>
+          </div>
+          <div class="bg-cardDark p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center shadow-lg gap-4 text-center">
+            <h2 class="text-lg font-bold text-white">زر القائمة: "المشاريع"</h2>
+            <div class="text-2xl px-6 py-2 rounded-xl bg-primaryTeal/20 text-primaryTeal font-extrabold border border-primaryTeal/30">
+              <span id="navProjectsViewsCount">0</span>
+            </div>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Students Stats -->
           <div class="bg-cardDark p-6 rounded-2xl border border-white/10 shadow-lg flex flex-col max-h-[500px]">
-            <h2 class="text-xl font-bold text-white mb-4">زيارات ملفات الخريجين</h2>
+            <h2 class="text-xl font-bold text-white mb-2">زيارات ملفات الخريجين</h2>
+            <input type="text" id="searchStudents" placeholder="ابحث باسم الخريج..." class="w-full bg-bgDark border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-primaryTeal transition mb-4">
             <div class="overflow-y-auto pr-2 custom-scrollbar flex-1 flex flex-col gap-3" id="studentsStatsList">
               <div class="text-center py-10"><i class="ph ph-spinner animate-spin text-3xl text-primaryTeal"></i></div>
             </div>
@@ -115,7 +141,8 @@
 
           <!-- Projects Stats -->
           <div class="bg-cardDark p-6 rounded-2xl border border-white/10 shadow-lg flex flex-col max-h-[500px]">
-            <h2 class="text-xl font-bold text-white mb-4">زيارات المشاريع</h2>
+            <h2 class="text-xl font-bold text-white mb-2">زيارات المشاريع</h2>
+            <input type="text" id="searchProjects" placeholder="ابحث باسم المشروع..." class="w-full bg-bgDark border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-primaryTeal transition mb-4">
             <div class="overflow-y-auto pr-2 custom-scrollbar flex-1 flex flex-col gap-3" id="projectsStatsList">
               <div class="text-center py-10"><i class="ph ph-spinner animate-spin text-3xl text-primaryTeal"></i></div>
             </div>
@@ -127,6 +154,40 @@
 
   </div>
 
-  <script type="module" src="admin.js"></script>
+  <script type="module" src="admin.js?v=10"></script>
+
+  <!-- Clear Stats Modal -->
+  <div id="clearStatsModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <div class="bg-bgDark border border-white/10 p-8 rounded-2xl w-full max-w-md transform scale-95 transition-transform duration-300">
+      <h3 class="text-2xl font-bold text-white mb-2">مسح الإحصائيات</h3>
+      <p class="text-textMuted mb-6 text-sm">اختر البيانات التي تريد تصفيرها. لا يمكن التراجع عن هذا الإجراء.</p>
+      
+      <div class="flex flex-col gap-3 mb-8">
+        <button id="clearGeneralBtn" class="w-full text-right bg-white/5 hover:bg-white/10 border border-white/5 p-4 rounded-xl text-white font-semibold transition-all flex justify-between items-center group">
+          <span>إحصائيات الأزرار (الرئيسية والقائمة)</span>
+          <i class="ph ph-trash text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </button>
+        <button id="clearStudentsBtn" class="w-full text-right bg-white/5 hover:bg-white/10 border border-white/5 p-4 rounded-xl text-white font-semibold transition-all flex justify-between items-center group">
+          <span>زيارات الخريجين</span>
+          <i class="ph ph-trash text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </button>
+        <button id="clearProjectsBtn" class="w-full text-right bg-white/5 hover:bg-white/10 border border-white/5 p-4 rounded-xl text-white font-semibold transition-all flex justify-between items-center group">
+          <span>زيارات المشاريع</span>
+          <i class="ph ph-trash text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </button>
+        <button id="clearAllBtn" class="w-full text-right bg-red-600/20 hover:bg-red-600/30 border border-red-500/20 p-4 rounded-xl text-red-400 font-semibold transition-all flex justify-between items-center mt-2">
+          <span>مسح جميع الإحصائيات بالكامل!</span>
+          <i class="ph ph-warning-circle text-xl"></i>
+        </button>
+      </div>
+      
+      <div class="flex justify-end">
+        <button id="closeClearStatsModalBtn" class="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-lg font-bold transition-all">
+          إلغاء
+        </button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

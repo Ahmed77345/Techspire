@@ -336,31 +336,28 @@
     </div>
   </div>
 
-  <script src="app_v4.js"></script>
+  <script src="app_v5.js"></script>
   <script type="module" src="guestbook.js"></script>
   
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <script type="module" src="analytics.js"></script>
-  <script type="module">
-    import { trackView } from './analytics.js';
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('viewGraduatesBtn');
-      if (btn) {
+  <script>
+    // Track clicks reliably using URL Parameters (to bypass Tracking Prevention)
+    function attachTrackingUrl(selector, docId) {
+      document.querySelectorAll(selector).forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
           const href = btn.getAttribute('href');
-          // Track and immediately navigate, or wait up to 500ms
-          Promise.race([
-            trackView('general_analytics', 'view_graduates_btn'),
-            new Promise(resolve => setTimeout(resolve, 500))
-          ]).then(() => {
-            window.location.href = href;
-          });
+          window.location.href = href + (href.includes('?') ? '&' : '?') + 'tracked=' + docId;
         });
-      }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        attachTrackingUrl('#viewGraduatesBtn', 'view_graduates_btn');
+        attachTrackingUrl('a[href="graduates.html"]:not(#viewGraduatesBtn)', 'nav_graduates_btn');
+        attachTrackingUrl('a[href="projects.html"]', 'nav_projects_btn');
     });
   </script>
 

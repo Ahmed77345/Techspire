@@ -35,6 +35,27 @@
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
+    "id": 12,
+    "name": "م/ هاشم صالح نصير",
+    "image": "./images/students/hashem.jpg",
+    "project_id": 21,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 13,
+    "name": "م/ يوسف عبدالقهار الشرجبي",
+    "image": "./images/students/yousef.jpg",
+    "project_id": 21,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 14,
+    "name": "م/ عبدالله عبدالحكيم التميمي",
+    "image": "./images/students/altamimi.jpg",
+    "project_id": 19,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
     "id": 15,
     "name": "م/ عمر يسر العامري",
     "image": "./images/students/omar.jpg",
@@ -53,6 +74,13 @@
     "name": "م/ طه محمد شامي",
     "image": "./images/students/taha.jpg",
     "project_id": 9,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 18,
+    "name": "م/ معاذ سعيد بارفيد",
+    "image": "./images/students/moath.jpg",
+    "project_id": 19,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -112,6 +140,20 @@
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
+    "id": 27,
+    "name": "م/ عبدالقادر علوي السقاف",
+    "image": "./images/students/alsaqqaf.jpg",
+    "project_id": 21,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 28,
+    "name": "م/ محمد امين بن حمزة",
+    "image": "./images/students/binhamza.jpg",
+    "project_id": 21,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
     "id": 29,
     "name": "م/ صالح عبداللطيف النقيب",
     "image": "./images/students/saleh.jpg",
@@ -123,6 +165,13 @@
     "name": "م/ محمد انيس بافضل",
     "image": "./images/students/bafadhl.jpg",
     "project_id": 6,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
+  },
+  {
+    "id": 31,
+    "name": "م/ فرج احمد عباس",
+    "image": "./images/students/farah.jpg",
+    "project_id": 19,
     "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   },
   {
@@ -406,27 +455,6 @@
     "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
   },
   {
-    "id": 14,
-    "name": "م/ عبدالله عبدالحكيم التميمي",
-    "image": "./images/students/altamimi.jpg",
-    "project_id": 19,
-    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
-  },
-  {
-    "id": 18,
-    "name": "م/ معاذ سعيد بارفيد",
-    "image": "./images/students/moath.jpg",
-    "project_id": 19,
-    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
-  },
-  {
-    "id": 31,
-    "name": "م/ فرج احمد عباس",
-    "image": "./images/students/farah.jpg",
-    "project_id": 19,
-    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
-  },
-  {
     "id": 74,
     "name": "م/ رجاء صالح بالطيف",
     "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
@@ -453,5 +481,12 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/projects%2Ffemale_avatar.jpg?alt=media",
     "project_id": 20,
     "bio": "خريجة متميزة تسعى لتطوير مهاراتها التقنية."
+  },
+  {
+    "id": 78,
+    "name": "م/ عبدالمجيد عبدالله باصلعه",
+    "image": "https://firebasestorage.googleapis.com/v0/b/graduates-de1c9.firebasestorage.app/o/students%2Fabdulmajeed.jpg?alt=media",
+    "project_id": 2,
+    "bio": "خريج متميز يسعى لتطوير مهاراته التقنية."
   }
 ]

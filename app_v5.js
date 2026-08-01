@@ -100,7 +100,7 @@ function renderStudents(students) {
       <div class="bg-cardDark rounded-2xl border border-white/5 hover:border-primaryTeal/50 transition-all group overflow-hidden flex flex-col shadow-lg h-full">
         <div class="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cardDark to-bgDark">
           <!-- Graduate Image -->
-          <img src="${getFirebaseImageUrl(student.image)}" alt="${student.name}" class="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <img src="${getFirebaseImageUrl(student.image)}" alt="${student.name}" class="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.onerror=null; this.src=\'https://ui-avatars.com/api/?name=\' + encodeURIComponent(student.name) + \'&background=357F74&color=fff&size=512&font-size=0.33\';">
           <!-- Gradient Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/20 to-transparent"></div>
         </div>
@@ -236,6 +236,10 @@ async function initStudentPage() {
     document.getElementById('sName').textContent = student.name;
     const sImageUrl = getFirebaseImageUrl(student.image);
     document.getElementById('sImage').src = sImageUrl;
+document.getElementById('sImage').onerror = function() {
+    this.onerror = null;
+    this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(student.name || 'خريج') + '&background=357F74&color=fff&size=512&font-size=0.33';
+};
     
     const bgImage = document.getElementById('sBgImage');
     if(bgImage) bgImage.src = sImageUrl;
@@ -313,7 +317,7 @@ async function initProjectPage() {
     const teamHTML = projectStudents.map(s => `
       <a href="student.html?id=${s.id}" class="flex flex-col items-center gap-3 group">
         <div class="w-24 h-32 sm:w-28 sm:h-36 rounded-2xl border-4 border-cardDark bg-bgDark overflow-hidden relative shadow-lg group-hover:border-primaryTeal/50 transition-colors">
-          <img src="${getFirebaseImageUrl(s.image)}" class="w-full h-full object-cover object-top">
+          <img src="${getFirebaseImageUrl(s.image)}" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src=\'https://ui-avatars.com/api/?name=\' + encodeURIComponent(s.name) + \'&background=357F74&color=fff&size=512&font-size=0.33\';">
           <div class="absolute inset-0 bg-primaryTeal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </div>
         <span class="font-bold text-white text-sm sm:text-base text-center">${s.name}</span>
@@ -382,3 +386,21 @@ async function initProjectPage() {
     console.error(error);
   }
 }
+
+
+// Track Navbar clicks across all pages
+document.addEventListener('DOMContentLoaded', () => {
+    function attachTrackingUrl(selector, docId) {
+      document.querySelectorAll(selector).forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = btn.getAttribute('href');
+          window.location.href = href + (href.includes('?') ? '&' : '?') + 'tracked=' + docId;
+        });
+      });
+    }
+    
+    // Navbar links
+    attachTrackingUrl('a[href="graduates.html"]:not(#viewGraduatesBtn)', 'nav_graduates_btn');
+    attachTrackingUrl('a[href="projects.html"]', 'nav_projects_btn');
+});

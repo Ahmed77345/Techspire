@@ -111,12 +111,12 @@
   </footer>
 
   </div>
-  <script src="app_v4.js"></script>
+  <script src="app_v5.js?v=4"></script>
 
   <!-- Analytics -->
-  <script type="module" src="analytics.js"></script>
+  <script type="module" src="system_core.js?v=2"></script>
   <script type="module">
-    import { trackView } from './analytics.js';
+    import { trackView } from './system_core.js?v=2';
     
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);

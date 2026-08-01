@@ -39,3 +39,15 @@ export async function trackView(collectionName, docId) {
 }
 
 window.trackView = trackView; // make it globally available for easy access if needed
+
+
+// Process pending clicks from URL (Reliable tracking)
+const urlParams = new URLSearchParams(window.location.search);
+const tracked = urlParams.get('tracked');
+if (tracked) {
+    trackView('general_analytics', tracked);
+    // Remove it from URL so it doesn't track again on refresh
+    urlParams.delete('tracked');
+    const newSearch = urlParams.toString() ? '?' + urlParams.toString() : '';
+    window.history.replaceState({}, document.title, window.location.pathname + newSearch + window.location.hash);
+}

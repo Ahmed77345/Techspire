@@ -215,6 +215,9 @@ if(tabMessages && tabStats) {
 
 // Stats Logic
 let statsLoaded = false;
+let globalStudentsStats = [];
+let globalProjectsStats = [];
+
 async function loadStats() {
   if (statsLoaded) return;
   
@@ -236,60 +239,41 @@ async function loadStats() {
     // 2. Fetch General Stats
     const generalSnap = await getDocs(collection(db, 'general_analytics'));
     let totalBtnClicks = 0;
+    let navGraduatesClicks = 0;
+    let navProjectsClicks = 0;
+    
     generalSnap.forEach(doc => {
       if(doc.id === 'view_graduates_btn') {
         totalBtnClicks = doc.data().views || 0;
       }
+      if(doc.id === 'nav_graduates_btn') {
+        navGraduatesClicks = doc.data().views || 0;
+      }
+      if(doc.id === 'nav_projects_btn') {
+        navProjectsClicks = doc.data().views || 0;
+      }
     });
     document.getElementById('generalViewsCount').innerText = totalBtnClicks;
+    document.getElementById('navGraduatesViewsCount').innerText = navGraduatesClicks;
+    document.getElementById('navProjectsViewsCount').innerText = navProjectsClicks;
     
     // 3. Fetch Students Stats
     const studentsSnap = await getDocs(collection(db, 'students_analytics'));
-    let studentsStats = [];
+    globalStudentsStats = [];
     studentsSnap.forEach(doc => {
-      studentsStats.push({ id: doc.id, views: doc.data().views || 0 });
+      globalStudentsStats.push({ id: doc.id, views: doc.data().views || 0, name: studentsMap[doc.id] || `خريج #${doc.id}` });
     });
-    studentsStats.sort((a, b) => b.views - a.views);
-    
-    const studentsListEl = document.getElementById('studentsStatsList');
-    studentsListEl.innerHTML = '';
-    if(studentsStats.length === 0) {
-      studentsListEl.innerHTML = '<p class="text-textMuted text-center text-sm">لا توجد بيانات بعد.</p>';
-    } else {
-      studentsStats.forEach(stat => {
-        const name = studentsMap[stat.id] || `خريج #${stat.id}`;
-        studentsListEl.innerHTML += `
-          <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5">
-            <span class="text-sm font-semibold">${name}</span>
-            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold">${stat.views} زيارة</span>
-          </div>
-        `;
-      });
-    }
+    globalStudentsStats.sort((a, b) => b.views - a.views);
+    renderStudentsStats(globalStudentsStats);
     
     // 4. Fetch Projects Stats
     const projectsSnap = await getDocs(collection(db, 'projects_analytics'));
-    let projectsStats = [];
+    globalProjectsStats = [];
     projectsSnap.forEach(doc => {
-      projectsStats.push({ id: doc.id, views: doc.data().views || 0 });
+      globalProjectsStats.push({ id: doc.id, views: doc.data().views || 0, name: projectsMap[doc.id] || `مشروع #${doc.id}` });
     });
-    projectsStats.sort((a, b) => b.views - a.views);
-    
-    const projectsListEl = document.getElementById('projectsStatsList');
-    projectsListEl.innerHTML = '';
-    if(projectsStats.length === 0) {
-      projectsListEl.innerHTML = '<p class="text-textMuted text-center text-sm">لا توجد بيانات بعد.</p>';
-    } else {
-      projectsStats.forEach(stat => {
-        const name = projectsMap[stat.id] || `مشروع #${stat.id}`;
-        projectsListEl.innerHTML += `
-          <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5">
-            <span class="text-sm font-semibold truncate max-w-[70%]">${name}</span>
-            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold whitespace-nowrap">${stat.views} زيارة</span>
-          </div>
-        `;
-      });
-    }
+    globalProjectsStats.sort((a, b) => b.views - a.views);
+    renderProjectsStats(globalProjectsStats);
     
     statsLoaded = true;
   } catch (error) {
@@ -298,3 +282,232 @@ async function loadStats() {
     document.getElementById('projectsStatsList').innerHTML = `<p class="text-red-400 text-center text-sm p-4 bg-red-900/20 rounded">خطأ: ${error.message}</p>`;
   }
 }
+
+function renderStudentsStats(data) {
+  const studentsListEl = document.getElementById('studentsStatsList');
+  studentsListEl.innerHTML = '';
+  if(data.length === 0) {
+    studentsListEl.innerHTML = '<p class="text-textMuted text-center text-sm p-4">لا توجد بيانات مطابقة.</p>';
+  } else {
+    data.forEach(stat => {
+      studentsListEl.innerHTML += `
+        <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5 group">
+          <span class="text-sm font-semibold">${stat.name}</span>
+          <div class="flex items-center gap-2">
+            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold">${stat.views} زيارة</span>
+            <button data-action="delete" data-collection="students_analytics" data-id="${stat.id}" class="text-red-500/50 hover:text-red-500 hover:bg-red-500/10 p-1.5 rounded-lg transition-all opacity-0 group-hover:opacity-100" title="مسح الإحصائية">
+              <i class="ph ph-trash text-lg"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+  }
+}
+
+function renderProjectsStats(data) {
+  const projectsListEl = document.getElementById('projectsStatsList');
+  projectsListEl.innerHTML = '';
+  if(data.length === 0) {
+    projectsListEl.innerHTML = '<p class="text-textMuted text-center text-sm p-4">لا توجد بيانات مطابقة.</p>';
+  } else {
+    data.forEach(stat => {
+      projectsListEl.innerHTML += `
+        <div class="flex justify-between items-center bg-bgDark p-3 rounded-lg border border-white/5 group">
+          <span class="text-sm font-semibold truncate max-w-[60%]">${stat.name}</span>
+          <div class="flex items-center gap-2">
+            <span class="bg-primaryTeal/20 text-primaryTeal px-2 py-1 rounded text-xs font-bold whitespace-nowrap">${stat.views} زيارة</span>
+            <button data-action="delete" data-collection="projects_analytics" data-id="${stat.id}" class="text-red-500/50 hover:text-red-500 hover:bg-red-500/10 p-1.5 rounded-lg transition-all opacity-0 group-hover:opacity-100" title="مسح الإحصائية">
+              <i class="ph ph-trash text-lg"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+  }
+}
+
+// Attach Search Listeners
+document.getElementById('searchStudents')?.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase().trim();
+  const filtered = globalStudentsStats.filter(s => s.name.toLowerCase().includes(query));
+  renderStudentsStats(filtered);
+});
+
+document.getElementById('searchProjects')?.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase().trim();
+  const filtered = globalProjectsStats.filter(p => p.name.toLowerCase().includes(query));
+  renderProjectsStats(filtered);
+});
+
+// Refresh Button Logic
+document.getElementById('refreshStatsBtn')?.addEventListener('click', () => {
+  const btn = document.getElementById('refreshStatsBtn');
+  const icon = btn.querySelector('i');
+  icon.classList.add('animate-spin');
+  statsLoaded = false;
+  
+  // Show loading spinners in lists
+  document.getElementById('studentsStatsList').innerHTML = '<div class="text-center py-10"><i class="ph ph-spinner animate-spin text-3xl text-primaryTeal"></i></div>';
+  document.getElementById('projectsStatsList').innerHTML = '<div class="text-center py-10"><i class="ph ph-spinner animate-spin text-3xl text-primaryTeal"></i></div>';
+  document.getElementById('generalViewsCount').innerText = '...';
+  document.getElementById('navGraduatesViewsCount').innerText = '...';
+  document.getElementById('navProjectsViewsCount').innerText = '...';
+  
+  loadStats().then(() => {
+    setTimeout(() => icon.classList.remove('animate-spin'), 500);
+  });
+});
+
+
+// ==========================================
+// Clear Stats Modal Logic
+// ==========================================
+const clearStatsModal = document.getElementById('clearStatsModal');
+const openClearStatsModalBtn = document.getElementById('openClearStatsModalBtn');
+const closeClearStatsModalBtn = document.getElementById('closeClearStatsModalBtn');
+
+function openModal() {
+    clearStatsModal.classList.remove('hidden');
+    // slight delay for animation
+    setTimeout(() => {
+        clearStatsModal.classList.remove('opacity-0');
+        clearStatsModal.querySelector('div').classList.remove('scale-95');
+        clearStatsModal.querySelector('div').classList.add('scale-100');
+    }, 10);
+}
+
+function closeModal() {
+    clearStatsModal.classList.add('opacity-0');
+    clearStatsModal.querySelector('div').classList.remove('scale-100');
+    clearStatsModal.querySelector('div').classList.add('scale-95');
+    setTimeout(() => {
+        clearStatsModal.classList.add('hidden');
+    }, 300);
+}
+
+openClearStatsModalBtn?.addEventListener('click', openModal);
+closeClearStatsModalBtn?.addEventListener('click', closeModal);
+clearStatsModal?.addEventListener('click', (e) => {
+    if(e.target === clearStatsModal) closeModal();
+});
+
+// Generic function to clear a collection
+async function clearCollection(collectionName, btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<div class="w-full text-center py-1"><i class="ph ph-spinner animate-spin text-xl"></i></div>';
+    btn.disabled = true;
+    try {
+        const querySnapshot = await getDocs(collection(db, collectionName));
+        const deletePromises = [];
+        querySnapshot.forEach((docSnap) => {
+            deletePromises.push(deleteDoc(doc(db, collectionName, docSnap.id)));
+        });
+        await Promise.all(deletePromises);
+        
+        // Refresh Stats
+        statsLoaded = false;
+        await loadStats();
+        
+        btn.innerHTML = '<div class="w-full text-center text-green-400 py-1"><i class="ph ph-check-circle text-xl"></i> تم المسح</div>';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }, 2000);
+    } catch (e) {
+        console.error("Error clearing " + collectionName, e);
+        btn.innerHTML = '<div class="w-full text-center text-red-500 py-1">حدث خطأ</div>';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }, 2000);
+    }
+}
+
+document.getElementById('clearGeneralBtn')?.addEventListener('click', async function() {
+    await clearCollection('general_analytics', this);
+});
+document.getElementById('clearStudentsBtn')?.addEventListener('click', async function() {
+    await clearCollection('students_analytics', this);
+});
+document.getElementById('clearProjectsBtn')?.addEventListener('click', async function() {
+    await clearCollection('projects_analytics', this);
+});
+document.getElementById('clearAllBtn')?.addEventListener('click', async function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<div class="w-full text-center py-1"><i class="ph ph-spinner animate-spin text-xl"></i></div>';
+    this.disabled = true;
+    try {
+        const p1 = clearCollection('general_analytics', document.getElementById('clearGeneralBtn'));
+        const p2 = clearCollection('students_analytics', document.getElementById('clearStudentsBtn'));
+        const p3 = clearCollection('projects_analytics', document.getElementById('clearProjectsBtn'));
+        await Promise.all([p1, p2, p3]);
+        
+        this.innerHTML = '<div class="w-full text-center text-green-400 py-1"><i class="ph ph-check-circle text-xl"></i> تم مسح كل شيء!</div>';
+        setTimeout(() => {
+            this.innerHTML = originalText;
+            this.disabled = false;
+            closeModal();
+        }, 2000);
+    } catch(e) {
+        this.innerHTML = originalText;
+        this.disabled = false;
+    }
+});
+
+
+window.deleteStat = async function(collectionName, docId) {
+    if(confirm('هل أنت متأكد من مسح إحصائيات هذا العنصر بالتحديد؟ لا يمكن التراجع عن هذا الإجراء.')) {
+        try {
+            await deleteDoc(doc(db, collectionName, docId));
+            statsLoaded = false;
+            await loadStats();
+        } catch (e) {
+            console.error("Error deleting stat:", e);
+            alert('حدث خطأ أثناء المسح');
+        }
+    }
+}
+
+
+
+
+// Global event delegation for delete buttons
+document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-action="delete"]');
+    if (btn) {
+        if (btn.getAttribute('data-confirming') !== 'true') {
+            btn.setAttribute('data-confirming', 'true');
+            btn.innerHTML = '<span class="text-xs font-bold px-1 text-red-500">تأكيد؟</span>';
+            btn.classList.add('bg-red-500/20');
+            
+            setTimeout(() => {
+                if (btn && btn.getAttribute('data-confirming') === 'true') {
+                    btn.removeAttribute('data-confirming');
+                    btn.innerHTML = '<i class="ph ph-trash text-lg"></i>';
+                    btn.classList.remove('bg-red-500/20');
+                }
+            }, 3000);
+            return;
+        }
+
+        const collectionName = btn.getAttribute('data-collection');
+        const docId = btn.getAttribute('data-id');
+        
+        try {
+            btn.innerHTML = '<i class="ph ph-spinner animate-spin text-lg"></i>';
+            btn.disabled = true;
+            
+            await deleteDoc(doc(db, collectionName, docId));
+            statsLoaded = false;
+            await loadStats();
+        } catch (err) {
+            console.error("Error deleting stat:", err);
+            alert('حدث خطأ أثناء المسح: ' + err.message);
+            btn.removeAttribute('data-confirming');
+            btn.innerHTML = '<i class="ph ph-trash text-lg"></i>';
+            btn.classList.remove('bg-red-500/20');
+            btn.disabled = false;
+        }
+    }
+});
